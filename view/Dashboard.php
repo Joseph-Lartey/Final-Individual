@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
-    <!-- ======= Styles ====== -->
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../css/dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js">
     </script>
 </head>
 
 <body>
-    <!-- =============== Navigation ================ -->
     <div class="container">
         <div class="navigation">
             <ul>
@@ -56,13 +54,20 @@
                 <li>
                     <a href="#">
                         <span class="icon">
+                        <ion-icon name="book"></ion-icon>
+                        </span>
+                        <span class="title">Booking</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
                             <ion-icon name="help-outline"></ion-icon>
                         </span>
                         <span class="title">Help</span>
                     </a>
                 </li>
-
-                <li>
 
 
 
@@ -77,7 +82,6 @@
             </ul>
         </div>
 
-        <!-- ========================= Main ==================== -->
         <div class="main">
             <div class="topbar">
                 <div class="toggle">
@@ -96,7 +100,6 @@
                 </div>
             </div>
 
-            <!-- ======================= Cards ================== -->
             <div class="cardBox">
                 <div class="card">
                     <div>
@@ -132,7 +135,6 @@
                 </div>
             </div>
 
-            <!-- ================ Order Details List ================= -->
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
@@ -143,7 +145,6 @@
 
                 </div>
 
-                <!-- ================= New Customers ================ -->
                 <div class="recentCustomers">
                     <div class="cardHeader">
                         <h2>Recent HomeSeekers</h2>
@@ -228,7 +229,6 @@
         </div>
     </div>
 
-    <!-- =========== Scripts =========  -->
     <script>
         
         let list = document.querySelectorAll(".navigation li");
@@ -267,7 +267,6 @@
             }]
         };
 
-        // Configuration options for the chart
         let options = {
             scales: {
                 y: {
@@ -276,11 +275,9 @@
             }
         };
 
-        // Get the canvas element
         let ctx = document.getElementById('myBarChart')
             .getContext('2d');
 
-        // Create the bar chart
         let myBarChart = new Chart(ctx, {
             type: 'bar',
             data: data,

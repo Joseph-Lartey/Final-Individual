@@ -94,14 +94,13 @@
         return false;
       }
 
-      // Check for Ghanaian phone number format
       let ghanaPhoneRegex = /^(?:(?:\+?233|233|0)(\d{9})|(?:233)(\d{9}))$/
       if (!ghanaPhoneRegex.test(phoneNumber)) {
         alert("Please enter a valid Ghanaian phone number.");
         return false;
       }
 
-      return true; // Allow form submission if validation passes
+      return true; 
     }
   </script>
 </body>
