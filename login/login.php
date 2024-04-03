@@ -6,22 +6,20 @@
   <title>Login</title>
   <link rel="stylesheet" href="../css/login.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <div class="wrapper">
-    <form method="post" action="" onsubmit="return validateForm()">
+    <form method="post" action="../action/login_action.php" onsubmit="return validateForm()">
       <h1>Login</h1>
       <div class="input-box">
-        <input type="email" placeholder="Email" id="email" required>
+        <input type="email" name="email" id="email" placeholder="Email" required>
         <i class='bx bx-envelope'></i>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Password" id="password" required>
+        <input type="password" name="password" id="password" placeholder="Password" required>
         <i class='bx bxs-lock-alt'></i>
-      </div>
-      <div class="remember-forgot">
-        <label><input type="checkbox">Remember Me</label>
-        <a href="#">Forgot Password</a>
       </div>
       <button type="submit" class="btn">Login</button>
       <div class="register-link">
@@ -37,26 +35,33 @@
 
       // Check for empty fields
       if (email.trim() === "" || password.trim() === "") {
-        alert("Please enter both email and password.");
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: 'Please enter both email and password.'
+        });
         return false;
       }
 
-      // Check email format
-      let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
-        return false;
-      }
-
-      // Check password format
-      let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-      if (!passwordRegex.test(password)) {
-        alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.");
-        return false;
-      }
-
-      return true; // Allow form submission if validation passes
+      return true;
     }
   </script>
+
+  <?php
+  session_start();
+
+  if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    echo "<script>
+            Swal.fire({
+              icon: '{$message['type']}',
+              title: '{$message['title']}',
+              html: '{$message['text']}',
+              confirmButtonText: 'OK',
+            });
+          </script>";
+    unset($_SESSION['message']); 
+  }
+  ?>
 </body>
 </html>
