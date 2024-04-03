@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="../css/Profile.css">
+    <title>Bookings</title>
+    <link rel="stylesheet" href="../css/Bookings.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js">
     </script>
 </head>
@@ -33,8 +33,8 @@
                     </a>
                 </li>
 
-                <li class="active">
-                    <a href="../view/Profile.php">
+                <li >
+                    <a href= "../view/Profile.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
@@ -51,7 +51,7 @@
                     </a>
                 </li>
 
-                <li>
+                <li class="active">
                     <a href="../view/Bookings.php">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
@@ -85,30 +85,47 @@
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
 
-            
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
 
                 <div class="user">
                     <img src="assets/imgs/customer01.jpg" alt="">
                 </div>
             </div>
             
-            <div class="outer-profile">
+            <div class="outer-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Property</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>123-456-7890</td>
+                    <td>Apartment A</td>
+                    <td>2024-04-01</td>
+                    <td>10:00 AM</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>987-654-3210</td>
+                    <td>House B</td>
+                    <td>2024-04-03</td>
+                    <td>02:30 PM</td>
+                </tr>
 
-                <div id="profile-page">
-                    <div class="profile-info">
-                        <img src="../images/3.jpg" alt="Profile Picture">
-                        <div class="user-details">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Email:</strong> johndoe@example.com</p>
-                            <p><strong>Date of Birth:</strong> January 1, 1990</p>
-                        </div>
-                    </div>
-                    <div class="profile-actions">
-                        <button class="Edit" id="Edit">Edit Username</button>
-                        <button class="Editemail" id="Editemail">Change Email</button>
-                        <button class = "ChangePassword" id="ChangePassword">Change Password</button>
-                    </div>
-                </div>
+                </tbody>
+            </table>
 
 
 

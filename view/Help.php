@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="../css/Profile.css">
+    <title>Help</title>
+    <link rel="stylesheet" href="../css/Help.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js">
     </script>
 </head>
@@ -33,7 +33,7 @@
                     </a>
                 </li>
 
-                <li class="active">
+                <li >
                     <a href="../view/Profile.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
@@ -60,7 +60,7 @@
                     </a>
                 </li>
 
-                <li>
+                <li class="active">
                     <a href="../view/Help.php">
                         <span class="icon">
                             <ion-icon name="help-outline"></ion-icon>
@@ -69,7 +69,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../login/Logout.php">
+                    <a href="../login/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -85,33 +85,72 @@
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
 
-            
 
                 <div class="user">
                     <img src="assets/imgs/customer01.jpg" alt="">
                 </div>
             </div>
             
-            <div class="outer-profile">
+            <div class="outer-card">
+                <div id="help-tab" class="sidebar-tab">
+                    <p>Welcome to the House Rental & Listing Platform! Below are some key features and tips to help you get started:</p>
+                    <p>
+                        <strong>Dashboard:</strong> <br>
+                        Get an overview of available properties, ongoing bookings, and important notifications.
+                    </p>
+                    <p>
+                        <strong>Rental Listings:</strong> <br>
+                        List your property for rent or sale. Manage property details, pricing, availability, and images.
+                    </p>
+                    <p>
+                        <strong>Booking System:</strong> <br>
+                        Book open house tours for available properties. Manage your booked tours and receive confirmation details.
+                    </p>
+                    <p>
+                        <strong>Search:</strong> <br>
+                        Find houses to rent or buy based on location, price range, amenities, and more. Save favorite listings for quick access.
+                    </p>
+                    <p>
+                        <strong>Reports:</strong> <br>
+                        View analytics and insights about your listed properties, booking trends, and revenue generated.
+                    </p>
+                    <p>
+                        <strong>Settings:</strong> <br>
+                        Customize profile settings, notification preferences, and privacy options.
+                    </p>
+                    <p>
+                        <strong>FAQs:</strong> <br>
+                        Find answers to common questions about listing properties, booking tours, and using platform features.
+                    </p>
+                    <p>
+                        <strong>Feedback:</strong> <br>
+                        Share your feedback, suggestions, or report any issues encountered while using our platform.
+                    </p>
+                    <p>For further assistance or inquiries, contact our support team at <a href="mailto:support@houserentallisting.com">support@houserentallisting.com</a></p>
+                    <p>Thank you for choosing our House Rental & Listing Platform. We hope it simplifies your property management and search processes!</p>
 
-                <div id="profile-page">
-                    <div class="profile-info">
-                        <img src="../images/3.jpg" alt="Profile Picture">
-                        <div class="user-details">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Email:</strong> johndoe@example.com</p>
-                            <p><strong>Date of Birth:</strong> January 1, 1990</p>
-                        </div>
-                    </div>
-                    <div class="profile-actions">
-                        <button class="Edit" id="Edit">Edit Username</button>
-                        <button class="Editemail" id="Editemail">Change Email</button>
-                        <button class = "ChangePassword" id="ChangePassword">Change Password</button>
-                    </div>
+                    <h3>Tips for Effective Property Management:</h3>
+                    <p>
+                        <strong>Provide detailed property information:</strong> <br>
+                        Include accurate descriptions, images, and amenities to attract potential renters or buyers.
+                    </p>
+                    <p>
+                        <strong>Respond promptly to booking requests:</strong> <br>
+                        Maintain good communication with interested parties to secure bookings or tours.
+                    </p>
+                    <p>
+                        <strong>Regularly update property availability:</strong> <br>
+                        Keep your listings current to avoid double bookings or outdated information.
+                    </p>
+                    <p>
+                        <strong>Utilize search filters:</strong> <br>
+                        Use advanced search options to refine property searches and target specific audiences.
+                    </p>
+                    <p>
+                        <strong>Engage with user feedback:</strong> <br>
+                        Address user suggestions or concerns to improve user satisfaction and platform usability.
+                    </p>
                 </div>
-
-
-
             </div>
 
             

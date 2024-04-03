@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="../css/Profile.css">
+    <title>Listing and Rentals</title>
+    <link rel="stylesheet" href="../css/listing.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js">
     </script>
 </head>
@@ -33,7 +33,7 @@
                     </a>
                 </li>
 
-                <li class="active">
+                <li >
                     <a href="../view/Profile.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
@@ -42,7 +42,7 @@
                     </a>
                 </li>
 
-                <li>
+                <li class="active">
                     <a href="../view/listing.php">
                         <span class="icon">
                             <ion-icon name="card-outline"></ion-icon>
@@ -85,31 +85,37 @@
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
 
-            
+                            <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
 
                 <div class="user">
                     <img src="assets/imgs/customer01.jpg" alt="">
                 </div>
             </div>
             
-            <div class="outer-profile">
+            <div class="outer-card">
 
-                <div id="profile-page">
-                    <div class="profile-info">
-                        <img src="../images/3.jpg" alt="Profile Picture">
-                        <div class="user-details">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Email:</strong> johndoe@example.com</p>
-                            <p><strong>Date of Birth:</strong> January 1, 1990</p>
-                        </div>
-                    </div>
-                    <div class="profile-actions">
-                        <button class="Edit" id="Edit">Edit Username</button>
-                        <button class="Editemail" id="Editemail">Change Email</button>
-                        <button class = "ChangePassword" id="ChangePassword">Change Password</button>
-                    </div>
+                <div class="house-card">
+                    <img src="../images/1.jpg" alt="House 1">
+                    <h3>House 1</h3>
+                    <p>Description of House 1...</p>
+                    <p>Location: City, Country</p>
+                    <p>Price: $XXXXX</p>
+                    <button class="book-btn">Book</button>
                 </div>
 
+                <div class="house-card">
+                    <img src="../images/2.jpg" alt="House 2">
+                    <h3>House 2</h3>
+                    <p>Description of House 2...</p>
+                    <p>Location: City, Country</p>
+                    <p>Price: $XXXXX</p>
+                    <button class="book-btn">Book</button>
+                </div>
 
 
             </div>

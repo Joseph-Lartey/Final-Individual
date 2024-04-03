@@ -16,7 +16,7 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="../view/Dashboard.php">
                         <span class="icon">
                             <ion-icon name="home"></ion-icon>
                         </span>
@@ -24,8 +24,8 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="#">
+                <li class="active">
+                    <a href="../view/Dashboard.php">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -34,7 +34,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="../view/Profile.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
@@ -43,36 +43,33 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="../view/listing.php">
                         <span class="icon">
-                            <ion-icon name="card"></ion-icon>
+                        <ion-icon name="card-outline"></ion-icon>
                         </span>
                         <span class="title">Rental and Listing</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="../view/Bookings.php">
                         <span class="icon">
-                        <ion-icon name="book"></ion-icon>
+                            <ion-icon name="book-outline"></ion-icon>
                         </span>
                         <span class="title">Booking</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="../view/Help.php">
                         <span class="icon">
                             <ion-icon name="help-outline"></ion-icon>
                         </span>
                         <span class="title">Help</span>
                     </a>
                 </li>
-
-
-
                 <li>
-                    <a href="#">
+                    <a href="../login/Logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
