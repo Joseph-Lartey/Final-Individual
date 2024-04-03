@@ -349,3 +349,85 @@ body {
 .book-btn:hover {
     background-color: #333;
 }
+
+
+/* CSS styles for the floating button */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    text-align: center;
+    cursor: pointer;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+
+/* CSS styles for the property form */
+.property-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+ 
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+}
+
+/* Styles for form labels */
+.property-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Styles for form inputs and textarea */
+.property-form input[type="text"],
+.property-form input[type="number"],
+.property-form textarea,
+.property-form select {
+    width: calc(100% - 20px); /* Adjust width with padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Styles for the submit button */
+.property-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 10px; /* Add margin to separate from other inputs */
+}
+
+.property-form button[type="submit"]:hover {
+    background-color: #333;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
