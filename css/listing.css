@@ -20,6 +20,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: #fff;
+  overflow-x: hidden;
+  background-image: url("../images/6.jpg");
+  background-size: cover;
+  background-position: center;
  
 }
 
@@ -315,40 +319,65 @@ body {
 }
 
 .house-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
 }
 
-.house-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+.house-card:hover{
+  background-color:rgb(118, 161, 193);
+  color: #fff;
 }
 
-.house-card h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
+.house-image {
+  width: 40%; /* Adjust based on your preference */
 }
 
-.house-card p {
-    margin-bottom: 10px;
+.house-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.house-details {
+  width: 55%; /* Adjust based on your preference */
+}
+
+.house-details h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.house-details p {
+  margin-bottom: 5px;
+}
+
+.house-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.house-details ul li {
+  margin-bottom: 5px;
 }
 
 .book-btn {
-    padding: 10px 20px; /* Increased padding */
-    font-size: 16px; /* Increased font size */
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .book-btn:hover {
-    background-color: #333;
+  background-color: #333;
 }
+
 
 
 /* CSS styles for the floating button */
@@ -373,17 +402,19 @@ body {
 
 /* CSS styles for the property form */
 .property-form {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40%;
- 
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    display: none; /* Initially hidden */
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: none; /* Initially hidden */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 70vh; /* Adjust maximum height as needed */
+  scroll-behavior: smooth; /* Optional: Smooth scrolling behavior */
 }
 
 /* Styles for form labels */
@@ -430,4 +461,87 @@ body {
     right: 10px;
     cursor: pointer;
     font-size: 20px;
+}
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%; /* Position horizontally in the center */
+  top: 50%; /* Position vertically in the center */
+  transform: translate(-50%, -50%); /* Center the modal */
+  width: 60%; /* Adjust the width as needed */
+  max-width: 400px; /* Limit the maximum width */
+  height: auto; /* Allow the height to adjust based on content */
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex; /* Display items in a column */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: space-between; /* Space evenly between items */
+  width: 100%;
+}
+
+/* Modal Content Heading */
+.modal-content h2 {
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 20px; /* Adjust bottom margin as needed */
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  align-self: flex-end; /* Align the close button to the right */
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: -20px; /* Adjust negative margin to bring the close button closer to the modal content */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Form */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Label */
+.modal-content form label {
+  margin-bottom: 10px;
+}
+
+/* Form Input */
+.modal-content form input[type="date"],
+.modal-content form input[type="time"],
+.modal-content form input[type="submit"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Submit Button */
+.modal-content form input[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-content form input[type="submit"]:hover {
+  background-color: #333;
 }

@@ -2,8 +2,7 @@
 session_start();
 include_once "../settings/connection.php";
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
@@ -40,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION['user_id'] = $row['user_id'];
                         $_SESSION['fname'] = $row['fname'];
                         $_SESSION['lname'] = $row['lname'];
-                        header("Location: ../Dashboard.php");
+                        header("Location: ../view/Dashboard.php");
                         exit();
                     } else {
                         $errors[] = "Invalid email or password.";

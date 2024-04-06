@@ -1,7 +1,10 @@
 <?php
-include "../action/getuserDetails.php";
+include("../settings/core.php");
+include ("../action/getuserDetails.php");
 
+checkLogin();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +13,8 @@ include "../action/getuserDetails.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookings</title>
-    <link rel="stylesheet" href="../css/Bookings.css">
+    <title>Listing and Rentals</title>
+    <link rel="stylesheet" href="../css/listing.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -39,8 +42,8 @@ include "../action/getuserDetails.php";
                     </a>
                 </li>
 
-                <li >
-                    <a href= "../view/Profile.php">
+                <li>
+                    <a href="../view/Profile.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
@@ -48,7 +51,7 @@ include "../action/getuserDetails.php";
                     </a>
                 </li>
 
-                <li>
+                <li class="active">
                     <a href="../view/listing.php">
                         <span class="icon">
                             <ion-icon name="card-outline"></ion-icon>
@@ -57,12 +60,20 @@ include "../action/getuserDetails.php";
                     </a>
                 </li>
 
-                <li class="active">
+                <li>
                     <a href="../view/Bookings.php">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
                         </span>
                         <span class="title">Booking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../view/Properties.php">
+                        <span class="icon">
+                        <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="title">My Properties</span>
                     </a>
                 </li>
 
@@ -104,81 +115,37 @@ include "../action/getuserDetails.php";
             </div>
             
             <div class="outer-card">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Contact</th>
-                        <th>Property</th>
-                        <th>Date</th>
-                        <th>Time</th>
+                
 
-                    </tr>
-                </thead>
-                <tbody>
-                <?php include_once "../action/Retrieve_booking_action.php"?>
-
-                </tbody>
-            </table>
+                
 
 
 
             </div>
+        </div>
 
-            
-    
+        <script>
+            function toggleForm() {
+                var form = document.getElementById("propertyForm");
+                form.style.display === "none" ? form.style.display = "block" : form.style.display = "none";
+            }
+        </script>
 
- 
+   
 
-
-    
-    <script>
-            
-        let list = document.querySelectorAll(".navigation li");
-
-        function addHover() {
-            list.forEach((item) => {
-                item.classList.remove("hovered");
-            });
-            this.classList.add("hovered");
-        }
-
-        function removeHover() {
-            this.classList.remove("hovered");
-        }
-
-        list.forEach((item) => {
-            item.addEventListener("mouseover", addHover);
-            item.addEventListener("mouseout", removeHover);
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('msg');
+            if (message) {
+                Swal.fire("Notice", message, "info");
+            }
         });
+        </script>
 
-        let toggle = document.querySelector(".toggle");
-        let navigation = document.querySelector(".navigation");
-        let main = document.querySelector(".main");
-
-        toggle.onclick = function () {
-            navigation.classList.toggle("active");
-            main.classList.toggle("active");
-        };
-
-
-    </script>
-
-    <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const urlParams = new URLSearchParams(window.location.search);
-                const message = urlParams.get('msg');
-                if (message) {
-                    Swal.fire("Notice", message, "info");
-                }
-            });
-    </script>
-
-
-
-    
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>
 </body>
 
 </html>

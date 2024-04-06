@@ -1,3 +1,8 @@
+<?php
+include "../action/getuserDetails.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +92,7 @@
 
 
                 <div class="user">
-                    <img src="assets/imgs/customer01.jpg" alt="">
+                    <?php echo getUserProfileImage(); ?>
                 </div>
             </div>
             

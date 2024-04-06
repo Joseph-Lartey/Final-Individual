@@ -9,22 +9,22 @@
 </head>
 <body>
   <div class="wrapper">
-    <form method="post" action="" onsubmit="return validateForm()">
+    <form method="post" action="../action/register_action.php" onsubmit="return validateForm()">
       <h1>Register</h1>
       <div class="input-box">
-        <input type="text" placeholder="First Name" id="firstName" required>
+        <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">
-        <input type="text" placeholder="Last Name" id="lastName" required>
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">
-        <input type="email" placeholder="Email" id="email" required>
+        <input type="email" name="email" id="email" placeholder="Email" required>
         <i class='bx bx-envelope'></i>
       </div>
       <div class="input-box">
-        <input type="text" placeholder="Phone Number" id="phoneNumber" required>
+        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required>
         <i class='bx bxs-phone'></i>
       </div>
       <div class="gender-checkbox">
@@ -39,15 +39,15 @@
             </div>
       </div>
       <div class="input-box">
-        <input type="date" placeholder="Date of Birth" id="dateOfBirth" required>
+        <input type="date" name="dateOfBirth" id="dateOfBirth" placeholder="Date of Birth" required>
         <i class='bx bxs-calendar'></i>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Password" id="password" required>
+        <input type="password" name="password" id="password" placeholder="Password" required>
         <i class='bx bxs-lock-alt'></i>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Confirm Password" id="confirmPassword" required>
+        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
         <i class='bx bxs-lock-alt'></i>
       </div>
       <button type="submit" class="btn">Register</button>

@@ -6,8 +6,9 @@ function checkLogin() {
         header("Location: ../login/login.php");
         die();
     }
+
+    
 }
 
 checkLogin();
-
 ?>
