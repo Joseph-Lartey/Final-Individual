@@ -13,12 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = mysqli_real_escape_string($conn, $_POST['address']);
     $city = mysqli_real_escape_string($conn, $_POST['city']);
     $state = mysqli_real_escape_string($conn, $_POST['state']);
-    $status = mysqli_real_escape_string($conn, $_POST['status']);
     $user_id = $_SESSION['user_id']; // Get user_id from session
 
     // Query to insert into properties table
-    $property_query = "INSERT INTO properties (title, description, price, property_type, bedrooms, size_sqft, address, city, state, status, user_id) 
-                    VALUES ('$title', '$description', '$price', '$propertyType', '$bedrooms', '$sizeSqft', '$address', '$city', '$state', '$status', '$user_id')";
+    $property_query = "INSERT INTO properties (title, description, price, property_type, bedrooms, size_sqft, address, city, state, user_id) 
+                    VALUES ('$title', '$description', '$price', '$propertyType', '$bedrooms', '$sizeSqft', '$address', '$city', '$state', '$user_id')";
 
     // Check if property insertion is successful
     if (mysqli_query($conn, $property_query)) {

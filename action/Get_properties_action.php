@@ -25,6 +25,7 @@ if ($result) {
             echo '<li><strong>Size:</strong> ' . $row['size_sqft'] . ' sqft</li>';
             echo '<li><strong>Location:</strong> ' . $row['city'] . ', ' . $row['state'] . '</li>';
             echo '<li><strong>Price:</strong> $' . $row['price'] . '</li>';
+            echo '<li><strong>Status:</strong> ' . $row['status'] . '</li>'; // Display property status
             echo '</ul>';
             // Add the property ID as a data attribute to the "Book" button
             echo '<button class="book-btn" data-property-id="' . $row['property_id'] . '">Book</button>';

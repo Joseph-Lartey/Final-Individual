@@ -350,83 +350,80 @@ body {
 .details .recentOrders table tr td:nth-child(3) {
   text-align: center;
 }
-.status.delivered {
-  padding: 2px 4px;
-  background: var(--light);
-  color: var(--dark);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.pending {
-  padding: 2px 4px;
-  background: var(--light);
-  color: var(--dark);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.return {
-  padding: 2px 4px;
-  background: var(--light);
-  color: var(--dark);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.inProgress {
-  padding: 2px 4px;
-  background: var(--light);
-  color: var(--dark);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
+
+
 
 .recentCustomers {
-  position: relative;
-  display: grid;
-  min-height: 500px;
-  padding: 20px;
-  background: var(--dark);
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
+  background-color: #fff;
+  border-radius: 15px;
 }
+
+.recentCustomers table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.recentCustomers table tr {
+  color: var(--light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recentCustomers table tr:last-child {
+  border-bottom: none;
+}
+
+.recentCustomers table tbody tr:hover {
+  background: var(--light);
+  color: var(--dark);
+}
+
+.recentCustomers table tr td {
+  padding: 10px; /* Adjust padding for spacing */
+}
+
+.recentCustomers table tr td:last-child {
+  text-align: right;
+}
+
 .recentCustomers .imgBx {
-  position: relative;
   width: 40px;
   height: 40px;
-  border-radius: 50px;
+  border-radius: 50%;
   overflow: hidden;
+  margin-right: 10px; /* Adjust margin for spacing */
 }
+
 .recentCustomers .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.recentCustomers table tr td {
-  padding:0;
-}
+
 .recentCustomers table tr td h4 {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2rem;
-  color: var(--light);
+  margin: 0; /* Remove margin to ensure proper alignment */
+  margin-right: 30%;
 }
-.recentCustomers table tr td h4 span {
+
+/* .recentCustomers table tr td h4 span {
   font-size: 14px;
-  color: var(--light);
-}
+ 
+} */
+
 .recentCustomers table tr:hover {
   background: var(--light);
   color: var(--dark);
 }
+
 .recentCustomers table tr:hover td h4 span {
   color: var(--dark);
 }
+
+
+
 
 /* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {

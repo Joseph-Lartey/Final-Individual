@@ -66,6 +66,14 @@ include "../action/getuserDetails.php";
                         <span class="title">Booking</span>
                     </a>
                 </li>
+                <li>
+                    <a href="../view/Properties.php">
+                        <span class="icon">
+                        <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="title">My Properties</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="../view/Help.php">

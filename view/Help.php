@@ -74,6 +74,14 @@ include "../action/getuserDetails.php";
                     </a>
                 </li>
                 <li>
+                    <a href="../view/Properties.php">
+                        <span class="icon">
+                        <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="title">My Properties</span>
+                    </a>
+                </li>
+                <li>
                     <a href="../login/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>

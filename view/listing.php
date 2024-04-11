@@ -68,6 +68,14 @@ checkLogin();
                         <span class="title">Booking</span>
                     </a>
                 </li>
+                <li>
+                    <a href="../view/Properties.php">
+                        <span class="icon">
+                        <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="title">My Properties</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="../view/Help.php">
@@ -143,12 +151,6 @@ checkLogin();
                         <label for="state">State:</label>
                         <input type="text" id="state" name="state" required>
 
-                        <label for="status">Status:</label>
-                        <select id="status" name="status" required>
-                            <option value="available">Available</option>
-                            <option value="pending">Pending</option>
-                            <option value="sold">Sold</option>
-                        </select>
 
                         <label for="propertyImage">Image:</label>
                         <input type="file" id="propertyImage" name="propertyImage" accept="image/*" required>
@@ -204,6 +206,18 @@ checkLogin();
                 var form = document.getElementById("propertyForm");
                 form.style.display === "none" ? form.style.display = "block" : form.style.display = "none";
             }
+        </script>
+
+        <script>        
+        let toggle = document.querySelector(".toggle");
+        let navigation = document.querySelector(".navigation");
+        let main = document.querySelector(".main");
+
+        toggle.onclick = function () {
+            navigation.classList.toggle("active");
+            main.classList.toggle("active");
+        };
+            
         </script>
 
         <script>

@@ -28,7 +28,7 @@ CREATE TABLE properties (
     address VARCHAR(255),
     city VARCHAR(100),
     state VARCHAR(100),
-    status ENUM('available', 'pending', 'sold') DEFAULT 'available',
+    status ENUM('available', 'unavailable') DEFAULT 'available',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     user_id INT,
     FOREIGN KEY (user_id) REFERENCES users(user_id)

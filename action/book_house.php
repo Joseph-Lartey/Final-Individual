@@ -31,6 +31,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
+    // Check if the property is available
+    $check_status_query = "SELECT status FROM properties WHERE property_id = ?";
+    $stmt = $conn->prepare($check_status_query);
+    $stmt->bind_param("i", $property_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $status = $row['status'];
+        if ($status != 'available') {
+            // Property is not available for booking
+            header("Location: ../view/listing.php?msg=This property is not available for booking.");
+            exit();
+        }
+    } else {
+        // Property not found
+        header("Location: ../view/listing.php?msg=Property not found.");
+        exit();
+    }
+
     // Insert the booking details into the bookings table
     $query = "INSERT INTO bookings (property_id, user_id, booking_date, booking_time, status, created_at) VALUES (?, ?, ?, ?, 'pending', NOW())";
 

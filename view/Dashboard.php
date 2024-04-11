@@ -1,7 +1,10 @@
 <?php
-include_once('../settings/core.php');
-include ("../action/getuserDetails.php");
-
+    include('../settings/core.php');
+    include ("../action/getuserDetails.php");
+    // include ("../action/get_All_stats_action.php");
+    include ("../action/get_All_stats_action.php");
+    include ("../action/Recent_Homeseeker.php");
+    
 
 ?>
 
@@ -59,12 +62,21 @@ include ("../action/getuserDetails.php");
                     </a>
                 </li>
 
+
                 <li>
                     <a href="../view/Bookings.php">
                         <span class="icon">
                             <ion-icon name="book-outline"></ion-icon>
                         </span>
                         <span class="title">Booking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../view/Properties.php">
+                        <span class="icon">
+                        <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="title">My Properties</span>
                     </a>
                 </li>
 
@@ -108,7 +120,7 @@ include ("../action/getuserDetails.php");
             <div class="cardBox">
                 <div class="card">
                     <div>
-                        <div class="numbers">1,504</div>
+                        <div class="numbers"><?php echo getTotalListings(); ?></div>
                         <div class="cardName">Listings</div>
                     </div>
 
@@ -119,7 +131,7 @@ include ("../action/getuserDetails.php");
 
                 <div class="card">
                     <div>
-                        <div class="numbers">80</div>
+                        <div class="numbers"><?php echo getTotalBookings($user_id= $_SESSION['user_id']); ?></div>
                         <div class="cardName">Bookings</div>
                     </div>
 
@@ -130,7 +142,7 @@ include ("../action/getuserDetails.php");
 
                 <div class="card">
                     <div>
-                        <div class="numbers">284</div>
+                        <div class="numbers"><?php echo getAvailablePropertiesCount(); ?></div>
                         <div class="cardName">Available Properties</div>
                     </div>
 
@@ -156,12 +168,16 @@ include ("../action/getuserDetails.php");
                     </div>
 
                     <table>
-                        <tr>
+                        <?php getRecentHomeSeekers($user_id);?>
+                        <!-- <tr>
                             <td width="60px">
                                 <div class="imgBx"><img src="../images/1.jpg"alt=""></div>
                             </td>
                             <td>
-                                <h4>David <br> <span>Italy</span></h4>
+                                <h4>David Italy</h4>
+                            </td>
+                            <td>
+                                <h4>0599755320</h4>
                             </td>
                         </tr>
 
@@ -170,7 +186,10 @@ include ("../action/getuserDetails.php");
                                 <div class="imgBx"><img src="../images/1.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>Amit <br> <span>India</span></h4>
+                                <h4>Amit India</h4>
+                            </td>
+                            <td>
+                                <h4>0599755320</h4>
                             </td>
                         </tr>
 
@@ -179,7 +198,10 @@ include ("../action/getuserDetails.php");
                                 <div class="imgBx"><img src="../images/1.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>David <br> <span>Italy</span></h4>
+                                <h4>David Italy</h4>
+                            </td>
+                            <td>
+                                <h4>0599755320</h4>
                             </td>
                         </tr>
 
@@ -188,7 +210,10 @@ include ("../action/getuserDetails.php");
                                 <div class="imgBx"><img src="../images/1.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>Amit <br> <span>India</span></h4>
+                                <h4>Amit India</h4>
+                            </td>
+                            <td>
+                                <h4>0599755320</h4>
                             </td>
                         </tr>
 
@@ -197,7 +222,10 @@ include ("../action/getuserDetails.php");
                                 <div class="imgBx"><img src="../images/1.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>David <br> <span>Italy</span></h4>
+                                <h4>David Italy</h4>
+                            </td>
+                            <td>
+                                <h4>0599755320</h4>
                             </td>
                         </tr>
 
@@ -206,7 +234,10 @@ include ("../action/getuserDetails.php");
                                 <div class="imgBx"><img src="../images/1.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>Amit <br> <span>India</span></h4>
+                                <h4>Amit India</h4>
+                            </td>
+                            <td>
+                                <h4>0599755320</h4>
                             </td>
                         </tr>
 
@@ -215,7 +246,10 @@ include ("../action/getuserDetails.php");
                                 <div class="imgBx"><img src="../images/1.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>David <br> <span>Italy</span></h4>
+                                <h4>David Italy</h4>
+                            </td>
+                            <td>
+                                <h4>0599755320</h4>
                             </td>
                         </tr>
 
@@ -224,9 +258,12 @@ include ("../action/getuserDetails.php");
                                 <div class="imgBx"><img src="../images/1.jpg" alt=""></div>
                             </td>
                             <td>
-                                <h4>Amit <br> <span>India</span></h4>
+                                <h4>Amit India</h4>
                             </td>
-                        </tr>
+                            <td>
+                                <h4>0599755320</h4>
+                            </td>
+                        </tr>  -->
                     </table>
 
                 </div>
@@ -266,20 +303,33 @@ include ("../action/getuserDetails.php");
 
 
     </script>
-
     <script>
+        // PHP variables containing statistics
+        let totalListings = <?php echo getTotalListings(); ?>;
+        let totalBookings = <?php echo getTotalBookings($_SESSION['user_id']); ?>;
+        let availablePropertiesCount = <?php echo getAvailablePropertiesCount(); ?>;
+
+        // Data for the bar chart
         let data = {
-            labels: ['Label 1', 'Label 2',
-                    'Label 3'],
+            labels: ['Total Listings', 'Total Bookings', 'Available Properties'],
             datasets: [{
-                label: 'Sample Bar Chart',
-                data: [12, 17, 3, 8, 2],
-                backgroundColor: 'rgba(0, 0, 0, 2)',
-                borderColor: 'rgba(150, 100, 255, 1)',
+                label: 'Statistics',
+                data: [totalListings, totalBookings, availablePropertiesCount],
+                backgroundColor: [
+                    'rgba(0, 0, 0, 0.2)', // Total Listings (black with opacity 0.2)
+                    'rgba(0, 0, 0, 0.2)', // Total Bookings (black with opacity 0.2)
+                    'rgba(0, 0, 0, 0.2)'   // Available Properties
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
                 borderWidth: 1
             }]
         };
 
+        // Options for the bar chart
         let options = {
             scales: {
                 y: {
@@ -288,9 +338,10 @@ include ("../action/getuserDetails.php");
             }
         };
 
-        let ctx = document.getElementById('myBarChart')
-            .getContext('2d');
+        // Get the canvas element
+        let ctx = document.getElementById('myBarChart').getContext('2d');
 
+        // Create the bar chart
         let myBarChart = new Chart(ctx, {
             type: 'bar',
             data: data,
