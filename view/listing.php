@@ -86,7 +86,7 @@ checkLogin();
                     </a>
                 </li>
                 <li>
-                    <a href="../login/Logout.php">
+                    <a href="../login/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -188,7 +188,6 @@ checkLogin();
                             <label for="booking_time">Booking Time:</label>
                             <input type="time" id="booking_time" name="booking_time" required>
 
-                            <!-- Hidden input field to store property ID -->
                             <input type="hidden" id="property_id" name="property_id">
 
                             <input type="submit" value="Book">
@@ -220,25 +219,18 @@ checkLogin();
         </script>
 
         <script>
-            // Function to open modal and set property_id in the hidden input field
             function openModal(propertyId) {
-                // Set the property_id in the hidden input field of the booking form
                 document.getElementById("property_id").value = propertyId;
-                // Display the booking modal
                 document.getElementById("bookingModal").style.display = "block";
             }
 
-            // Function to close modal
             function closeModal() {
                 document.getElementById("bookingModal").style.display = "none";
             }
 
-            // Function to listen for click on Book button and open modal with property_id
             document.querySelectorAll('.book-btn').forEach(item => {
                 item.addEventListener('click', event => {
-                    // Get the property_id from the data-property-id attribute of the clicked button
                     const propertyId = item.getAttribute('data-property-id');
-                    // Open the modal with the property_id
                     openModal(propertyId);
                 })
             });
@@ -257,36 +249,27 @@ checkLogin();
         <script>
 function filterProperties() {
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
-    const searchValue = parseFloat(searchInput); // Convert search input to a number
+    const searchValue = parseFloat(searchInput); 
 
     document.querySelectorAll('.house-card').forEach(card => {
-        const cardDetails = card.querySelector('.house-details').innerText.toLowerCase(); // Get all details text
-        const cardValues = cardDetails.match(/\d+(\.\d+)?/g); // Extract all numeric values
+        const cardDetails = card.querySelector('.house-details').innerText.toLowerCase(); 
+        const cardValues = cardDetails.match(/\d+(\.\d+)?/g); 
 
         let matches = false;
 
         if (!isNaN(searchValue)) {
-            // If search input is a number, check if any numeric value in details matches
             if (cardValues) {
                 matches = cardValues.some(value => parseFloat(value) === searchValue);
             }
         } else {
-            // If search input is not a number, check if any part of details contains the search input
             matches = cardDetails.includes(searchInput);
         }
 
-        // Toggle visibility based on match result
         card.style.display = matches ? '' : 'none';
     });
 }
 
-
-
-
-
-
-
-        </script>
+ </script>
 
 
     

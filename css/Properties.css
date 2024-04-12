@@ -1,7 +1,5 @@
-/* =========== Google Fonts ============ */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
-/* =============== Globals ============== */
 * {
   font-family: "Ubuntu", sans-serif;
   margin: 0;
@@ -32,7 +30,6 @@ body {
   width: 100%;
 }
 
-/* =============== Navigation ================ */
 .navigation {
   position: fixed;
   width: 300px;
@@ -191,8 +188,8 @@ body {
 .search {
   position: relative;
   width: 100%;
-  max-width: 400px; /* Limiting the width to avoid stretching on larger screens */
-  margin: 0 auto; /* Center the search box horizontally */
+  max-width: 400px; 
+  margin: 0 auto; 
 }
 
 .search input[type="text"] {
@@ -200,9 +197,9 @@ body {
   height: 40px;
   border-radius: 40px;
   padding: 5px 20px;
-  padding-left: 45px; /* Increased left padding to accommodate the icon */
+  padding-left: 45px; 
   font-size: 18px;
-  outline: none; /* Removing the outline on focus */
+  outline: none; 
   border: 1px solid var(--dark);
   background-color: #fff;
   color: #000;
@@ -211,8 +208,8 @@ body {
 .search ion-icon {
   position: absolute;
   top: 40%;
-  left: 15px; /* Adjusted left position to center the icon vertically */
-  transform: translateY(-55%); /* Centering the icon vertically */
+  left: 15px; 
+  transform: translateY(-55%);
   font-size: 1.5rem;
   color: #000;
 }
@@ -240,7 +237,6 @@ body {
 
 
 
-/* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {
   .navigation {
     left: -300px;
@@ -323,7 +319,7 @@ body {
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align items vertically */
+  align-items: center;
 }
 
 .house-card:hover{
@@ -332,7 +328,7 @@ body {
 }
 
 .house-image {
-  width: 40%; /* Adjust based on your preference */
+  width: 40%; 
 }
 
 .house-image img {
@@ -341,7 +337,7 @@ body {
 }
 
 .house-details {
-  width: 55%; /* Adjust based on your preference */
+  width: 55%; 
 }
 
 .house-details h3 {
@@ -394,7 +390,6 @@ body {
 
 
 
-/* CSS styles for the floating button */
 .floating-btn {
     position: fixed;
     bottom: 20px;
@@ -407,14 +402,13 @@ body {
     font-size: 32px;
     text-align: center;
     cursor: pointer;
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 
 
-/* CSS styles for the property form */
 .property-form {
   position: fixed;
   top: 55%;
@@ -425,33 +419,30 @@ body {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  display: none; /* Initially hidden */
-  overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 70vh; /* Adjust maximum height as needed */
-  scroll-behavior: smooth; /* Optional: Smooth scrolling behavior */
+  display: none; 
+  overflow-y: auto; 
+  max-height: 70vh; 
+  scroll-behavior: smooth;
 }
 
-/* Styles for form labels */
 .property-form label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-/* Styles for form inputs and textarea */
 .property-form input[type="text"],
 .property-form input[type="number"],
 .property-form textarea,
 .property-form select {
-    width: calc(100% - 20px); /* Adjust width with padding */
+    width: calc(100% - 20px); 
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    box-sizing: border-box; 
 }
 
-/* Styles for the submit button */
 .property-form button[type="submit"] {
     width: 100%;
     padding: 12px;
@@ -462,7 +453,7 @@ body {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease-in-out;
-    margin-top: 10px; /* Add margin to separate from other inputs */
+    margin-top: 10px; 
 }
 
 .property-form button[type="submit"]:hover {
@@ -565,5 +556,4 @@ button[type="button"]:hover {
   font-size: 16px;
 }
 
-/* Increase dropdown size */
 

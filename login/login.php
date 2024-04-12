@@ -33,7 +33,6 @@
       let email = document.getElementById("email").value;
       let password = document.getElementById("password").value;
 
-      // Check for empty fields
       if (email.trim() === "" || password.trim() === "") {
         Swal.fire({
           icon: 'error',

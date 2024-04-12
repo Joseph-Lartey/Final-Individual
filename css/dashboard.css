@@ -1,7 +1,5 @@
-/* =========== Google Fonts ============ */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
-/* =============== Globals ============== */
 * {
   font-family: "Ubuntu", sans-serif;
   margin: 0;
@@ -29,7 +27,6 @@ body {
   width: 100%;
 }
 
-/* =============== Navigation ================ */
 .navigation {
   position: fixed;
   width: 300px;
@@ -104,7 +101,6 @@ body {
   white-space: nowrap;
 }
 
-/* --------- curve outside ---------- */
 .navigation ul li:hover a::before,
 .navigation ul li.hovered a::before {
   content: "";
@@ -145,7 +141,6 @@ body {
   color: #fff; 
 }
 
-/* ===================== Main ===================== */
 .main {
   position: absolute;
   width: calc(100% - 300px);
@@ -230,7 +225,6 @@ body {
   object-fit: cover;
 }
 
-/* ======================= Cards ====================== */
 .cardBox {
   position: relative;
   width: 100%;
@@ -279,7 +273,6 @@ body {
   color: var(--dark);
 }
 
-/* ================== Order Details List ============== */
 .details {
   position: relative;
   width: 100%;
@@ -379,7 +372,7 @@ body {
 }
 
 .recentCustomers table tr td {
-  padding: 10px; /* Adjust padding for spacing */
+  padding: 10px; 
 }
 
 .recentCustomers table tr td:last-child {
@@ -391,7 +384,7 @@ body {
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 10px; /* Adjust margin for spacing */
+  margin-right: 10px; 
 }
 
 .recentCustomers .imgBx img {
@@ -404,14 +397,11 @@ body {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2rem;
-  margin: 0; /* Remove margin to ensure proper alignment */
+  margin: 0; 
   margin-right: 30%;
 }
 
-/* .recentCustomers table tr td h4 span {
-  font-size: 14px;
- 
-} */
+
 
 .recentCustomers table tr:hover {
   background: var(--light);
@@ -425,7 +415,6 @@ body {
 
 
 
-/* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {
   .navigation {
     left: -300px;

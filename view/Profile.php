@@ -85,7 +85,7 @@ include "../action/getuserDetails.php";
                     </a>
                 </li>
                 <li>
-                    <a href="../login/Logout.php">
+                    <a href="../login/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>

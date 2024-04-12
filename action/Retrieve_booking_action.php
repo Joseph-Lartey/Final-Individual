@@ -4,35 +4,27 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../login/login.php?msg=" . urlencode("Please log in to access this page."));
     exit();
 }
 
-// Retrieve the current user's ID from the session
 $user_id = $_SESSION['user_id'];
 
-// Check if the current user has any properties listed
 $query = "SELECT * FROM properties WHERE user_id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Initialize a variable to hold error message
 $error_message = '';
 
-// Flag to check if any bookings were found
 $bookings_found = false;
 
-// Check if properties are listed by the current user
 if ($result->num_rows > 0) {
-    // Display the booking details for each property
     while ($row = $result->fetch_assoc()) {
         $property_id = $row['property_id'];
 
-        // Retrieve bookings for the current property
         $booking_query = "SELECT CONCAT(users.fname, ' ', users.lname) AS full_name, users.phone_number, properties.title, bookings.booking_date, bookings.booking_time
                           FROM bookings
                           INNER JOIN users ON bookings.user_id = users.user_id
@@ -43,9 +35,7 @@ if ($result->num_rows > 0) {
         $booking_stmt->execute();
         $booking_result = $booking_stmt->get_result();
 
-        // Check if there are bookings for the property
         if ($booking_result->num_rows > 0) {
-            // Display the booking details
             while ($booking_row = $booking_result->fetch_assoc()) {
                 echo '<tr>
                         <td>' . $booking_row['full_name'] . '</td>
@@ -55,22 +45,18 @@ if ($result->num_rows > 0) {
                         <td>' . $booking_row['booking_time'] . '</td>
                       </tr>';
             }
-            // Set the flag to true if bookings were found
             $bookings_found = true;
         }
     }
 }
 
-// Check if any bookings were found
 if (!$bookings_found) {
     $error_message = 'No bookings found for any property.';
 }
 
-// Close statements and database connection
 $stmt->close();
 $conn->close();
 
-// Display error message using SweetAlert
 if (!empty($error_message)) {
     echo '<script>
             Swal.fire({

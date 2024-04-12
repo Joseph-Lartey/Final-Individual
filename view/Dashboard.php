@@ -89,7 +89,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../login/Logout.php">
+                    <a href="../login/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -298,21 +298,19 @@
 
     </script>
     <script>
-        // PHP variables containing statistics
         let totalListings = <?php echo getTotalListings(); ?>;
         let totalBookings = <?php echo getTotalBookings($_SESSION['user_id']); ?>;
         let availablePropertiesCount = <?php echo getAvailablePropertiesCount(); ?>;
 
-        // Data for the bar chart
         let data = {
             labels: ['Total Listings', 'Total Bookings', 'Available Properties'],
             datasets: [{
                 label: 'Statistics',
                 data: [totalListings, totalBookings, availablePropertiesCount],
                 backgroundColor: [
-                    'rgba(0, 0, 0, 0.2)', // Total Listings (black with opacity 0.2)
-                    'rgba(0, 0, 0, 0.2)', // Total Bookings (black with opacity 0.2)
-                    'rgba(0, 0, 0, 0.2)'   // Available Properties
+                    'rgba(0, 0, 0, 0.2)', 
+                    'rgba(0, 0, 0, 0.2)', 
+                    'rgba(0, 0, 0, 0.2)'   
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -323,7 +321,6 @@
             }]
         };
 
-        // Options for the bar chart
         let options = {
             scales: {
                 y: {
@@ -332,10 +329,8 @@
             }
         };
 
-        // Get the canvas element
         let ctx = document.getElementById('myBarChart').getContext('2d');
 
-        // Create the bar chart
         let myBarChart = new Chart(ctx, {
             type: 'bar',
             data: data,

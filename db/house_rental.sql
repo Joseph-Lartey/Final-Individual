@@ -30,8 +30,7 @@ CREATE TABLE properties (
     state VARCHAR(100),
     status ENUM('available', 'unavailable') DEFAULT 'available',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    user_id INT,
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
+    user_id INT
 );
 
 -- Create property_images table
@@ -49,16 +48,25 @@ CREATE TABLE bookings (
     user_id INT,
     booking_date DATE,
     booking_time TIME,
-    status ENUM('pending', 'confirmed', 'canceled') DEFAULT 'pending',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (property_id) REFERENCES properties(property_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Add foreign key constraint to properties table
+ALTER TABLE properties
+ADD CONSTRAINT fk_user_id
+FOREIGN KEY (user_id) REFERENCES users(user_id);
 
+-- Add foreign key constraint to property_images table
+ALTER TABLE property_images
+ADD CONSTRAINT fk_property_id
+FOREIGN KEY (property_id) REFERENCES properties(property_id);
 
+-- Add foreign key constraint to bookings table for property_id
+ALTER TABLE bookings
+ADD CONSTRAINT fk_property_id
+FOREIGN KEY (property_id) REFERENCES properties(property_id);
 
-
-
-
-
+-- Add foreign key constraint to bookings table for user_id
+ALTER TABLE bookings
+ADD CONSTRAINT fk_user_id
+FOREIGN KEY (user_id) REFERENCES users(user_id);

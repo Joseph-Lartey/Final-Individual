@@ -80,7 +80,7 @@ checkLogin();
                     </a>
                 </li>
                 <li>
-                    <a href="../login/Logout.php">
+                    <a href="../login/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -171,18 +171,15 @@ checkLogin();
 
 <script>
     function updateStatus(propertyId) {
-        // Submit the form asynchronously using fetch
         fetch('../action/update_status_action.php', {
             method: 'POST',
-            body: new FormData(), // You may need to pass data if required by the action file
+            body: new FormData(),
         })
         .then(response => response.text())
         .then(data => {
-            // Handle any response data if needed
             console.log(data);
         })
         .catch(error => {
-            // Handle errors if any
             console.error('Error:', error);
         });
     }
@@ -191,25 +188,22 @@ checkLogin();
  <script>
     function filterProperties() {
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
-    const searchValue = parseFloat(searchInput); // Convert search input to a number
+    const searchValue = parseFloat(searchInput); 
 
     document.querySelectorAll('.house-card').forEach(card => {
-        const cardDetails = card.querySelector('.house-details').innerText.toLowerCase(); // Get all details text
-        const cardValues = cardDetails.match(/\d+(\.\d+)?/g); // Extract all numeric values
+        const cardDetails = card.querySelector('.house-details').innerText.toLowerCase(); 
+        const cardValues = cardDetails.match(/\d+(\.\d+)?/g); 
 
         let matches = false;
 
         if (!isNaN(searchValue)) {
-            // If search input is a number, check if any numeric value in details matches
             if (cardValues) {
                 matches = cardValues.some(value => parseFloat(value) === searchValue);
             }
         } else {
-            // If search input is not a number, check if any part of details contains the search input
             matches = cardDetails.includes(searchInput);
         }
 
-        // Toggle visibility based on match result
         card.style.display = matches ? '' : 'none';
     });
 }

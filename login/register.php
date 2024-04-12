@@ -68,27 +68,23 @@
       let confirmPassword = document.getElementById("confirmPassword").value.trim();
       let gender = document.querySelector('input[name="gender"]:checked');
 
-      // Check for empty fields
       if (firstName === "" || lastName === "" || email === "" || phoneNumber === "" || dateOfBirth === "" || password === "" || confirmPassword === "" || !gender) {
         alert("Please fill in all the required fields.");
         return false;
       }
 
-      // Check email format
       let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         alert("Please enter a valid email address.");
         return false;
       }
 
-      // Check password format
       let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
       if (!passwordRegex.test(password)) {
         alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.");
         return false;
       }
 
-      // Check if passwords match
       if (password !== confirmPassword) {
         alert("Passwords do not match.");
         return false;

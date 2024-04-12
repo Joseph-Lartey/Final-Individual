@@ -138,7 +138,8 @@ ul li a:hover {
 }
 
 .cn:hover {
-    background-color: #fff;
+    background-color: #333;
+    color: #000;
 }
 
 .content span {
@@ -209,7 +210,16 @@ ul li a:hover {
     text-align: center;
     flex: 1;
     margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+
 }
+
+.about-item:hover {
+    transform: scale(1.05); 
+    background-color: #333;
+    color:#fff;    
+}
+
 
 .about-item ion-icon {
     font-size: 48px;
@@ -258,27 +268,27 @@ ul li a:hover {
 
 .recent-listings {
     width: 100%;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent line breaks */
+    overflow-x: auto;
+    white-space: nowrap; 
     padding: 20px 0;
 }
 
 .carousel {
-    display: inline-flex; /* Use flexbox for horizontal layout */
-    gap: 20px; /* Add space between property cards */
+    display: inline-flex;
+    gap: 20px; 
 }
 
 .property-card {
-    flex: 0 0 auto; /* Prevent property cards from stretching */
-    width: 300px; /* Set the width of each property card */
+    flex: 0 0 auto; 
+    width: 300px; 
     border: 1px solid #ccc;
     border-radius: 10px;
-    overflow: hidden; /* Hide overflowing content */
-    transition: transform 0.3s ease; /* Add smooth transition for hover effect */
+    overflow: hidden; 
+    transition: transform 0.3s ease; 
 }
 
 .property-card:hover {
-    transform: scale(1.05); /* Scale up the card on hover */
+    transform: scale(1.05); 
 }
 
 .property-card img {

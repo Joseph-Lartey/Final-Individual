@@ -2,7 +2,6 @@
 include('../settings/connection.php');
 
 
-// Function to get the total number of listings
 function getTotalListings() {
     global $conn;
     $query = "SELECT COUNT(*) AS total_listings FROM properties";
@@ -13,11 +12,9 @@ function getTotalListings() {
 
 
 
-// Function to get the total number of bookings for a property
 function getTotalBookings($user_id) {
     global $conn;
 
-    // First, retrieve all properties posted by the user
     $query = "SELECT property_id FROM properties WHERE user_id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $user_id);
@@ -26,7 +23,6 @@ function getTotalBookings($user_id) {
 
     $total_bookings = 0;
 
-    // Loop through each property and sum up the bookings
     while ($row = $result->fetch_assoc()) {
         $property_id = $row['property_id'];
         $total_bookings += getBookingsForProperty($property_id);
@@ -45,7 +41,6 @@ function getBookingsForProperty($property_id) {
     $row = $result->fetch_assoc();
     return $row['total_bookings'];
 }
-// Function to count the number of available properties
 function getAvailablePropertiesCount() {
     global $conn;
     $query = "SELECT COUNT(*) AS available_properties FROM properties WHERE status = 'available'";

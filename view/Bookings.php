@@ -84,7 +84,7 @@ include "../action/getuserDetails.php";
                     </a>
                 </li>
                 <li>
-                    <a href="../login/Logout.php">
+                    <a href="../login/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -193,14 +193,12 @@ include "../action/getuserDetails.php";
         const date = booking.querySelector('td:nth-child(4)').innerText.toLowerCase();
         const time = booking.querySelector('td:nth-child(5)').innerText.toLowerCase();
 
-        // Determine if the current booking matches the search criteria
         const matchesSearch = name.includes(searchInput) ||
                               contact.includes(searchInput) ||
                               property.includes(searchInput) ||
                               date.includes(searchInput) ||
                               time.includes(searchInput);
 
-        // Toggle visibility based on match result
         if (matchesSearch) {
             booking.style.display = '';
         } else {
