@@ -1,9 +1,9 @@
 <?php
 
 
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "root";
-$password = "";
+$password = "LPXZhN.=IVD8";
 $databasename = "house_rental";
 
 
