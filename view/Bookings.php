@@ -1,4 +1,5 @@
 <?php
+include "../settings/core.php";
 include "../action/getuserDetails.php";
 
 ?>
@@ -100,10 +101,8 @@ include "../action/getuserDetails.php";
                 </div>
 
                 <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
+                    <input type="text" id="searchInput" onkeyup="filterProperties()" placeholder="Search properties">
+                    <ion-icon name="search-outline"></ion-icon>
                 </div>
 
                 <div class="user">
@@ -180,6 +179,38 @@ include "../action/getuserDetails.php";
                     Swal.fire("Notice", message, "info");
                 }
             });
+    </script>
+
+    <script>
+        function filterBookings() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const bookings = document.querySelectorAll('tbody tr');
+
+    bookings.forEach(booking => {
+        const name = booking.querySelector('td:nth-child(1)').innerText.toLowerCase();
+        const contact = booking.querySelector('td:nth-child(2)').innerText.toLowerCase();
+        const property = booking.querySelector('td:nth-child(3)').innerText.toLowerCase();
+        const date = booking.querySelector('td:nth-child(4)').innerText.toLowerCase();
+        const time = booking.querySelector('td:nth-child(5)').innerText.toLowerCase();
+
+        // Determine if the current booking matches the search criteria
+        const matchesSearch = name.includes(searchInput) ||
+                              contact.includes(searchInput) ||
+                              property.includes(searchInput) ||
+                              date.includes(searchInput) ||
+                              time.includes(searchInput);
+
+        // Toggle visibility based on match result
+        if (matchesSearch) {
+            booking.style.display = '';
+        } else {
+            booking.style.display = 'none';
+        }
+    });
+}
+
+document.getElementById('searchInput').addEventListener('keyup', filterBookings);
+
     </script>
 
 

@@ -103,11 +103,10 @@ checkLogin();
                 </div>
 
                 <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
+                    <input type="text" id="searchInput" onkeyup="filterProperties()" placeholder="Search properties">
+                    <ion-icon name="search-outline"></ion-icon>
                 </div>
+
 
                 <div class="user">
                     <?php echo getUserProfileImage(); ?>
@@ -255,9 +254,48 @@ checkLogin();
         });
         </script>
 
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    </div>
+        <script>
+function filterProperties() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const searchValue = parseFloat(searchInput); // Convert search input to a number
+
+    document.querySelectorAll('.house-card').forEach(card => {
+        const cardDetails = card.querySelector('.house-details').innerText.toLowerCase(); // Get all details text
+        const cardValues = cardDetails.match(/\d+(\.\d+)?/g); // Extract all numeric values
+
+        let matches = false;
+
+        if (!isNaN(searchValue)) {
+            // If search input is a number, check if any numeric value in details matches
+            if (cardValues) {
+                matches = cardValues.some(value => parseFloat(value) === searchValue);
+            }
+        } else {
+            // If search input is not a number, check if any part of details contains the search input
+            matches = cardDetails.includes(searchInput);
+        }
+
+        // Toggle visibility based on match result
+        card.style.display = matches ? '' : 'none';
+    });
+}
+
+
+
+
+
+
+
+        </script>
+
+
+    
+    
+    
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
 </body>
 
 </html>

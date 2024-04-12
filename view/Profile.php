@@ -1,4 +1,5 @@
 <?php
+include "../settings/core.php";
 include "../action/getuserDetails.php";
 
 

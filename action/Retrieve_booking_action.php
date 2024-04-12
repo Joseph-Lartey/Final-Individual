@@ -23,6 +23,9 @@ $result = $stmt->get_result();
 // Initialize a variable to hold error message
 $error_message = '';
 
+// Flag to check if any bookings were found
+$bookings_found = false;
+
 // Check if properties are listed by the current user
 if ($result->num_rows > 0) {
     // Display the booking details for each property
@@ -52,12 +55,15 @@ if ($result->num_rows > 0) {
                         <td>' . $booking_row['booking_time'] . '</td>
                       </tr>';
             }
-        } else {
-            $error_message .= 'No bookings found for property';
+            // Set the flag to true if bookings were found
+            $bookings_found = true;
         }
     }
-} else {
-    $error_message = 'No properties listed by the current user.';
+}
+
+// Check if any bookings were found
+if (!$bookings_found) {
+    $error_message = 'No bookings found for any property.';
 }
 
 // Close statements and database connection
